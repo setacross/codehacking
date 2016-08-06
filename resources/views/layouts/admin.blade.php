@@ -41,8 +41,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="glyphicon glyphicon-wrench"></i> Users <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">All Users</a></li>
-                        <li><a href="#">Create User</a></li>
+                        <li><a href="{{ url('admin/users') }}">All Users</a></li>
+                        <li><a href="{{ url('admin/users/create') }}">Create User</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
