@@ -41,16 +41,16 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="glyphicon glyphicon-wrench"></i> Users <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ url('admin/users') }}">All Users</a></li>
-                        <li><a href="{{ url('admin/users/create') }}">Create User</a></li>
+                        <li><a href="{{ route('admin.users.index') }}">All Users</a></li>
+                        <li><a href="{{ route('admin.users.create') }}">Create User</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="glyphicon glyphicon-wrench"></i> Posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">All Posts</a></li>
-                        <li><a href="#">Create Post</a></li>
+                        <li><a href="{{ url('admin/posts') }}">All Posts</a></li>
+                        <li><a href="{{ url('admin/posts/create') }}">Create Post</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
