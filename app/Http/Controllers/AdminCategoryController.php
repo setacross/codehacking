@@ -6,6 +6,7 @@ use App\Category;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Session;
 
 class AdminCategoryController extends Controller
 {
@@ -66,7 +67,9 @@ class AdminCategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        
+        return view('admin.categories.edit',compact('category'));
     }
 
     /**
@@ -78,7 +81,15 @@ class AdminCategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        $input = $request->all();
+
+        $category->update($input);
+
+        Session::flash('message','The Category has been updated');
+
+        return redirect('admin/categories');
     }
 
     /**
