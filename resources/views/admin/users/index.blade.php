@@ -5,6 +5,9 @@
         <h1>Users</h1>
     </div>
     <div class="panel-body">
+        @if(Session::has('message'))
+            <p class="bg-info">{{session('message')}}</p>
+            @endif
         <table class="table-responsive table ">
             <thead>
             <tr>
@@ -23,7 +26,7 @@
                 @foreach($users as $user)
                 <tr>
                     <td>{{ $user->id }}</td>
-                    <td><img height="50"
+                    <td><img width="60"
                              src="{{$user->photo ? $user->photo->file : 'http://placehold.it/400x400'}}" alt=""></td>
                     <td><a href="{{route('admin.users.edit',$user->id)}}">{{ $user->name }}</a></td>
                     <td>{{ $user->email }}</td>

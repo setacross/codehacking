@@ -49,16 +49,16 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="glyphicon glyphicon-wrench"></i> Posts <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{ url('admin/posts') }}">All Posts</a></li>
-                        <li><a href="{{ url('admin/posts/create') }}">Create Post</a></li>
+                        <li><a href="{{ route('admin.posts.index')  }}">All Posts</a></li>
+                        <li><a href="{{ route('admin.posts.create')  }}">Create Post</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="glyphicon glyphicon-wrench"></i> Categories<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">All Categories</a></li>
-                        <li><a href="#">Create Category</a></li>
+                        <li><a href="{{ route('admin.categories.index') }}">All Categories</a></li>
+                        <li><a href="{{ route('admin.categories.create') }}">Create Category</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -83,13 +83,13 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        <i class="glyphicon glyphicon-user"></i> User: <span class="caret"></span></a>
+                        <i class="glyphicon glyphicon-user"></i>{{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Action</a></li>
                         <li><a href="#">Another action</a></li>
                         <li><a href="#">Something else here</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
+                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                     </ul>
                 </li>
             </ul>
